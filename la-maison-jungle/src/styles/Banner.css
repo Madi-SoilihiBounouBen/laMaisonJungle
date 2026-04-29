@@ -1,0 +1,26 @@
+/*
+* Mise en forme du composant Banner.jsx
+*/
+
+.banner{ /* Le point permet de selectionner la classe. Ici, c'est banner, qui se trouve dans Banner.jsx*/
+    display: flex;
+    align-items: center; /* Aligner au centre*/
+    justify-content: space-between;
+    padding: 32px;
+    border-bottom: 3px solid #31b572;
+    background-color: #f8f9fa;
+}
+
+.banner-title{
+    color: #66d857;
+    font-size: 2rem;
+    margin: 0;
+    font-family: 'Gregoria', serif;
+}
+
+.banner-logo {
+    height: auto;
+    width: 100px;
+    margin-left: 20px;
+    border-radius: 0 40px 0 60px;
+}
