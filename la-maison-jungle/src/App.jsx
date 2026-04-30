@@ -10,6 +10,7 @@ import Banner from './components/Banner'
 
 // J'import le composant Cart
 import Cart from './components/Cart'
+import ShoppingList from './components/ShoppingList'
 
 function App() {
  
@@ -19,6 +20,8 @@ function App() {
       <Banner />
 
       <Cart />
+
+      <ShoppingList />
     
     </>
 
