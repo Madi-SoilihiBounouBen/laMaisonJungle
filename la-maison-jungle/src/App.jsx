@@ -12,12 +12,24 @@ import Banner from './components/Banner'
 import Cart from './components/Cart'
 import ShoppingList from './components/ShoppingList'
 
+import logo from './assets/annie-logo.jpg'
+
+import styles from './styles/Banner.module.css'
+
 function App() {
- 
+  const title = "Bienvenue à la maison !"
+
+  /**
+   * Lorsque j'appelle le composant <Banner>, j'y insère deux enfants <h1> et <img>. 
+   * Ces enfants sont récupérés dans Banner.jsx à l'aide de props {children}.
+   */
 
   return (
     <>
-      <Banner />
+      <Banner>
+         <img src={logo} alt="Logo de la maison" className={styles.logo} />
+         <h1 className={styles.title}>{title}</h1>
+      </Banner>
 
       <Cart />
 
