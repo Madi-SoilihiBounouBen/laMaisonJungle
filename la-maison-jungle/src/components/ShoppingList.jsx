@@ -3,7 +3,7 @@
  */
 
 import styles from '../styles/ShoppingList.module.css';
-import CareScale from './CareScale';
+import PlantItem from './PlantItem';
 
 // Importez les images des plantes
 import montseraImg from '../assets/alice-brie.jpg';
@@ -12,7 +12,7 @@ import pothosImg from '../assets/pothos-argente.png';
 import yuccoImg from '../assets/yucco.png';
 import palmierImg from '../assets/palmier.png';
 
-// Liste des plantes avec toutes les informations nécessaires
+// Liste des plantes avec toutes les informations necessaires
 const planList = [
     {
         name: 'monstera',
@@ -22,7 +22,7 @@ const planList = [
         isSpecialOffer: true,
         water: 3,
         light: 1,
-        image: montseraImg
+        cover: montseraImg
     },
     {
         name: 'ficus lyarata',
@@ -32,7 +32,7 @@ const planList = [
         isSpecialOffer: false,
         water: 2,
         light: 5,
-        image: ficusImg
+        cover: ficusImg
     },
     {
         name: 'pothos argenté',
@@ -42,7 +42,7 @@ const planList = [
         isSpecialOffer: false,
         water: 3,
         light: 5,
-        image: pothosImg
+        cover: pothosImg
     },
     {
         name: 'yucco',
@@ -52,7 +52,7 @@ const planList = [
         isSpecialOffer: false,
         water: 6,
         light: 5,
-        image: yuccoImg
+        cover: yuccoImg
     },
     {
         name: 'palmier',
@@ -62,45 +62,25 @@ const planList = [
         isSpecialOffer: false,
         water: 2,
         light: 3,
-        image: palmierImg
+        cover: palmierImg
     }
 ];
 
-// Composant ShoppingList qui affiche une liste de plantes
 const ShoppingList = () => {
     return (
         <ul className={styles.lmjPlantList}>
-            {planList.map((plant) => (
-                <li key={plant.id} className={styles.lmjPlantItem}>
-                    <div className={styles.plantImage}>
-                        <img 
-                            src={plant.image} 
-                            alt={`Image de ${plant.name}`} 
-                            className={styles.plantLogo} 
-                        />
-                    </div>
-
-                    <div className={styles.plantInfo}>
-                        <h3 className={styles.plantName}>{plant.name}</h3>
-                        
-                        <div className={styles.plantRating}>
-                            <span className={styles.bestSaleIcon}>
-                                {plant.isBestSale ? '👌' : '😒'}
-                            </span>
-                        </div>
-
-                        {plant.isSpecialOffer && (
-                            <span className={styles.lmjSales}>Solde</span>
-                        )}
-
-                        <div className={styles.careScales}>
-                            <CareScale careType='light' scaleValue={plant.light} />
-                            <CareScale careType='water' scaleValue={plant.water} />
-                        </div>
-
-                        <span className={`${styles.category} ${plant.category === 'Local' ? styles.local : styles.importer}`}>{plant.category}</span>
-                    </div>
-                </li>
+            {planList.map(({ id, name, cover, water, light, isBestSale, category, isSpecialOffer }) => (
+                <PlantItem
+                    key={id}
+                    id={id}
+                    name={name}
+                    cover={cover}
+                    water={water}
+                    light={light}
+                    isBestSale={isBestSale}
+                    category={category}
+                    isSpecialOffer={isSpecialOffer}
+                />
             ))}
         </ul>
     );

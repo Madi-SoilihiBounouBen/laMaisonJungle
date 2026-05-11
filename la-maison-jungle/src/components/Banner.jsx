@@ -2,6 +2,7 @@
  * Banner est le composant pour présenter la bannière (la barre de navigation)
  * Le composant Banner retourne un message codé en HTML <h1>Bienvenue à la maison !</h1>
  * Le composant Banner est exporté pour être utilisé dans d'autres fichiers
+ * Un composant React est une fonction qui retourne du JSX (HTML dans du JavaScript), et qui peut être réutilisée dans d'autres parties de l'application.
  */
 
 // J'importe le fichier Banner.css appliqué au composant
