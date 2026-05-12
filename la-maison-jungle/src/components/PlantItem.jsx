@@ -3,12 +3,13 @@ import CareScale from './CareScale'
 import styles from '../styles/PlantItem.module.css'
 
 const PlantItem = ({ id, cover, name, water, light, isBestSale, category, isSpecialOffer }) => {
-    const handleClick = (event) => {
-        console.log("Je clique sur mon evenement :", event);
+    const handleClick = (event, plantName) => {
+        event.preventDefault()
+        console.log("Je clique sur mon evenement :", plantName);
     }
 
     return (
-        <li key={id} className={styles.lmjPlantItem} onClick={() => handleClick(name)}>
+        <li key={id} className={styles.lmjPlantItem} onClick={(event) => handleClick(event, name)}>
             <img className={styles.lmjPlantItemCover} src={cover} alt={`${name} cover`} />
             {name}
 

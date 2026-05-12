@@ -16,6 +16,9 @@ import logo from './assets/annie-logo.jpg'
 
 import styles from './styles/Banner.module.css'
 
+import QuestionForm from './components/QuestionForm'
+import Footer from './components/Footer'
+
 function App() {
   const title = "Bienvenue à la maison !"
 
@@ -34,6 +37,10 @@ function App() {
       <Cart />
 
       <ShoppingList />
+
+      <QuestionForm />
+
+      <Footer />
     
     </>
 
