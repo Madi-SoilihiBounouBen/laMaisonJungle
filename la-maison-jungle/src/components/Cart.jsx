@@ -3,15 +3,14 @@
  */
 
 import { useState } from 'react'
+
 import styles from '../styles/Cart.module.css'
 
-// Je déclare mon composant Cart
 const Cart = () => {
     const [isOpen, setIsOpen] = useState(false)
-    const monstera = 8
-    const lierre = 12
-    const bouquet = 9
-    
+    const monsteraPrice = 8
+    const [cart, updateCart] = useState(0)
+
     const handleOpen = () => setIsOpen(true)
     const handleClose = () => setIsOpen(false)
     const handleOverlayClick = (e) => {
@@ -19,35 +18,32 @@ const Cart = () => {
             handleClose()
         }
     }
-    
-    return (
-        <>
-            <button className={styles.cartButton} onClick={handleOpen}>
-                🛒 Votre panier
-            </button>
-            
-            {isOpen && (
-                <div className={styles.cartOverlay} onClick={handleOverlayClick}>
-                    <div className={styles.cart}>
-                        <button className={styles.closeButton} onClick={handleClose}>
-                            ✕
-                        </button>
-                        <h2>Votre panier</h2>
 
-                        <ul className={styles.cartList}> 
-                            <li>Monstera: {monstera} €</li>
-                            <li>Lierre: {lierre} €</li>
-                            <li>Bouquet de fleurs: {bouquet} €</li>
-                        </ul>
-                        <p className={styles.cartTotal}>Total : {monstera + lierre + bouquet} €</p>
+    return isOpen ? (
+        <div className={styles.lmjcartOverlay} onClick={handleOverlayClick}>
+            <div className={styles.cart}>
+                <button className={styles.lmjcloseButton} onClick={handleClose}>
+                    Fermer
+                </button>
+                <h2>🧺Votre panier</h2>
 
-                    </div>
+                <div>
+                    Monstera : {monsteraPrice} €
+                    <button className={styles.lmjbuttonAddProduit} onClick={() => updateCart(cart + 1)}>
+                        Ajouter au panier
+                    </button>
                 </div>
-            )}
-        </>
+
+            
+                <p className={styles.lmjcartTotal}>Total : {monsteraPrice * cart} €</p>
+                <button className={styles.lmjbuttonViderPanier} onClick={() => updateCart(0)}>Vider le panier</button>
+            </div>
+        </div>
+    ) : (
+        <button className={styles.cartButton} onClick={handleOpen}>
+            💼Ouvrir panier
+        </button>
     )
-        
-        
 }
 
 export default Cart
