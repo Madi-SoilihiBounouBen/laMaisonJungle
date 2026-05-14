@@ -1,5 +1,7 @@
 import { useState } from 'react'
 
+import styles from '../styles/QuestionForm.module.css'
+
 const QuestionForm = () => {
     const [inputValue, setInputValue] = useState('')
 
@@ -17,7 +19,7 @@ const QuestionForm = () => {
            onChange={(event) => checkValue(event.target.value)} 
             />
 
-            <button onClick={() => alert(inputValue)}>
+            <button className={styles.lmjButtonSend} onClick={() => alert(inputValue)}>
                 Envoyer
             </button>
 

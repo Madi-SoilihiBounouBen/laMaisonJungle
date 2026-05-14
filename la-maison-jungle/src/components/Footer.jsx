@@ -1,5 +1,8 @@
 import { useState } from 'react'
 
+import { FaFacebook, FaInstagram, FaTwitter,  FaSnapchat, FaTiktok } from 'react-icons/fa'
+
+
 import styles from '../styles/Footer.module.css'
 
 const Footer = () => {
@@ -17,18 +20,40 @@ const Footer = () => {
 
     return (
         <footer className={styles.lmjfooter}>
-            <div className={styles.lmjfooterelem}>
-                <p>&copy; 🛖🥀La Maison Jungle 🌱. Tous droits réservés.</p>
+
+            <div className={styles.lmjServicefootere}>
+                <p>Service client</p>
+                <p>FAQ</p>
+                <p>Contact</p>
+            </div>
+            
+            <div className="soc">
+                <p>Suivez-nous sur les réseaux sociaux</p>
+               <p><FaFacebook /> Facebook</p> 
+                <p><FaInstagram /> Instagram</p>
+                <p><FaSnapchat /> Snapchat</p>
+                <p><FaTiktok /> TikTok</p>
             </div>
 
-            <div className="lmj-footer-elem">
-                <p>Laissze votre email 📧</p>
+            <div className={styles.lmjFooterElem}>
+                <p>
+                    Laissze votre email 📧
+                    <input 
+                        placeholder="Entrez votre email" value={inputValue}
+                        onChange={handleInput}
+                        onBlur={handleBlur}
+                    />
+                </p>
+                <p>
+                    Appelez-nous au 📞 01 23 45 67 89
+                </p>
             </div>
-            <input 
-            placeholder="Entrez votre email" value={inputValue}
-            onChange={handleInput}
-            onBlur={handleBlur}
-            />
+
+            
+
+            <div className={styles.lmjfooterCopyright}>
+                <p>&copy; 🛖🥀La Maison Jungle 🌱. Tous droits réservés.</p>
+            </div>
 
         </footer>
     )
