@@ -30,7 +30,7 @@ const Footer = () => {
             <div className="soc">
                 <p>Suivez-nous sur les réseaux sociaux</p>
                <p><FaFacebook /> Facebook</p> 
-                <p><FaInstagram /> Instagram</p>
+                <p><FaInstagram /><a href="https://www.instagram.com/" >Instagram</a> </p>
                 <p><FaSnapchat /> Snapchat</p>
                 <p><FaTiktok /> TikTok</p>
             </div>

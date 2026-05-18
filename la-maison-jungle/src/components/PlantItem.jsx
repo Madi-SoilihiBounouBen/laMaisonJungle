@@ -2,7 +2,7 @@ import CareScale from './CareScale'
 
 import styles from '../styles/PlantItem.module.css'
 
-const PlantItem = ({ id, cover, name, water, light, isBestSale, category, isSpecialOffer }) => {
+const PlantItem = ({ id, cover, name, water, light, isBestSale, category, isSpecialOffer, children }) => {
     const handleClick = (event, plantName) => {
         event.preventDefault()
         console.log("Je clique sur mon evenement :", plantName);
@@ -23,6 +23,9 @@ const PlantItem = ({ id, cover, name, water, light, isBestSale, category, isSpec
             <span className={`${styles.category} ${category === 'Local' ? styles.local : styles.importer}`}>
                 {category}
             </span>
+
+            {/* Affiche ici le prix et le bouton d'ajout definis dans ShoppingList.jsx grace à la prop children. */}
+            {children}
         </li>
     )
 }

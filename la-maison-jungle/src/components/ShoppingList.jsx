@@ -22,6 +22,7 @@ const planList = [
         isSpecialOffer: true,
         water: 3,
         light: 1,
+        price: 8,
         cover: montseraImg
     },
     {
@@ -32,6 +33,7 @@ const planList = [
         isSpecialOffer: false,
         water: 2,
         light: 5,
+        price: 10,
         cover: ficusImg
     },
     {
@@ -42,6 +44,7 @@ const planList = [
         isSpecialOffer: false,
         water: 3,
         light: 5,
+        price: 15,
         cover: pothosImg
     },
     {
@@ -52,6 +55,7 @@ const planList = [
         isSpecialOffer: false,
         water: 6,
         light: 5,
+        price: 20,
         cover: yuccoImg
     },
     {
@@ -62,14 +66,15 @@ const planList = [
         isSpecialOffer: false,
         water: 2,
         light: 3,
+        price: 25,
         cover: palmierImg
     }
 ];
 
-const ShoppingList = () => {
+const ShoppingList = ({ updateCart }) => {
     return (
         <ul className={styles.lmjPlantList}>
-            {planList.map(({ id, name, cover, water, light, isBestSale, category, isSpecialOffer }) => (
+            {planList.map(({ id, name, cover, water, light, isBestSale, category, isSpecialOffer, price }) => (
                 <PlantItem
                     key={id}
                     id={id}
@@ -80,7 +85,19 @@ const ShoppingList = () => {
                     isBestSale={isBestSale}
                     category={category}
                     isSpecialOffer={isSpecialOffer}
-                />
+                >
+                    {/* Affiche le prix de la plante dans la carte produit. */}
+                    <span className={styles.plantPrice}>{price} €</span>
+
+                    {/* Ce bouton ajoute la plante actuelle dans le panier partage avec Cart. */}
+                    <button
+                        className={styles.lmjbuttonAddProduit}
+                        // Je garde les anciens produits et J'ajoute le nom + le prix de cette plante. les 3 points permettent de garder les anciens produits dans le panier et d'ajouter le nouveau produit sans les supprimer.
+                        onClick={() => updateCart((currentCart) => [...currentCart, { name, price }])}
+                    >
+                        Ajouter au panier
+                    </button>
+                </PlantItem>
             ))}
         </ul>
     );

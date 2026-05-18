@@ -140,16 +140,17 @@ ul {
 }
 
 
-.lmjbuttonAddProduit{
+.lmjbuttonSupprimerProduit {
     margin-left: 32px;
-    background-color: #7cecf065;
+    background-color: #f02020ab;
     color: black;
     border: none;
     border-radius: 3px;
-}*
+    cursor: pointer;
+}
 
-.lmjbuttonAddProduit:hover{
-    background-color: #6e79e2;
+.lmjbuttonSupprimerProduit:hover {
+    background-color: #f02020;
     color: white;
 }
 

@@ -21,6 +21,7 @@ import Footer from './components/Footer'
 
 function App() {
   const title = "Bienvenue à la maison !"
+  const [cart, updateCart] = useState([])
 
   /**
    * Lorsque j'appelle le composant <Banner>, j'y insère deux enfants <h1> et <img>. 
@@ -34,9 +35,9 @@ function App() {
          <h1 className={styles.title}>{title}</h1>
       </Banner>
 
-      <Cart />
+      <Cart cart={cart} updateCart={updateCart} />
 
-      <ShoppingList />
+      <ShoppingList cart={cart} updateCart={updateCart} />
 
       <QuestionForm />
 

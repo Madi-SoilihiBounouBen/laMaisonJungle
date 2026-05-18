@@ -51,6 +51,24 @@
     text-align: center;
 }
 
+.plantPrice {
+    font-weight: bold;
+}
+
+.lmjbuttonAddProduit {
+    background-color: #7cecf065;
+    color: black;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 6px 10px;
+}
+
+.lmjbuttonAddProduit:hover {
+    background-color: #6e79e2;
+    color: white;
+}
+
 .bestSaleIcon {
     font-size: 20px;
 }
